@@ -1,20 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
+.main {
+	position: absolute;
+	height: 100%;
+}
+
+.main > .row {
+	height: 100%;
+}
+
 .main-col {
 	padding: 0px !important;
+}
+
+.header {
+	padding-top: 10px;
+}
+
+.logo {
+	width: 180px;
+	height: 40px;
 }
 
 .main-image {
 	width: 100%;
 	height: 100%;
 	background: url("../img/Rectangle.png") no-repeat;
-	background-color: red;
 	background-size: cover;
 }
 
 .content {
+	position: relative;
 	background-color: #323338;
 	color: white;
+	height: 100%;
 }
 
 .features-container {
@@ -41,14 +60,125 @@
 	margin-bottom: 30px;
 }
 
-.advantages .col{
+.advantages-card{
 	display: flex;
 	align-items: flex-start;
-	justify-content: space-between;
+	justify-content: center;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 20px;
+}
+
+.advantages-text {
+	max-width: 138px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 90%;
+	margin-bottom: 11px;
+}
+
+.test {
+	background-color: #323338; 
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1000;
+}
+
+.test-header {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.test-col{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+.test-aside {
+	background: url('../img/test-aside-background.png') no-repeat;
+	background-size: overlay;
+	padding-top: 10px;
+}
+
+.test-body {
+	background-color: #232429;
+	color: white;
+	padding-top: 10px;
+}
+
+.scale {
+	padding: 0 !important;
+	margin: 0;
+	width: 100%;
+	height: 15px;
+	border: 2px solid #28292E;
+	background-color: #323338;
+	border-radius: 10px;
+}
+
+.scale-filling {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 25%;
+	background-color: orange;
+	border-radius: 5px;
+}
+
+.answers {
+	height: 100%;
+}
+
+.answers input{
+	width: 100%;
+	background-color: #28292E;
+}
+.answers input + label {
+	font-size: 1.5em;
+}
+
+.answers input:checked + label {
+	color: orange;
+}
+
+.answer {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background-color:#28292E;
+	height: 100%;
+	margin-bottom: 10px;
+}
+
+.answer label {
+	margin-left: 15px;
+}
+
+.answer-text {
+	padding: 20px 15px;
+	margin: 0;
+	margin-left: 10px;
+}
+
+/*Стили для кусков текста, кнопок, состояний*/
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(1,1,1,0.65);
+	z-index: 1000;
 }
 
 .button {
@@ -60,8 +190,11 @@
 	width: 179px;
 	height: 60px;
 	background: #F48C0C;
+	color: white;
+	font-weight: 600;
 	border: none;
 	border-radius: 2px;
+	user-select: none;
 }
 
 .start-button {
@@ -70,4 +203,8 @@
 
 .bold-text {
 	font-weight: bold;
+}
+
+.hide {
+	display: none !important;
 }

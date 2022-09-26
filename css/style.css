@@ -303,8 +303,8 @@
 
 .button {
 	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
+	align-items: center;
+	justify-content: center;
 	padding: 20px 40px;
 	background: #F48C0C;
 	color: white;
@@ -313,6 +313,12 @@
 	border-radius: 2px;
 	user-select: none;
 	cursor: pointer;
+	transition-property: all;
+	transition-duration: 150ms;
+}
+
+.button:hover {
+	box-shadow: 0 0 10px 5px rgba(265, 161, 0, 0.35);
 }
 
 .test-button {
@@ -339,4 +345,10 @@
 
 .hide {
 	display: none !important;
+}
+
+@media (max-width: 600px) {
+	.button {
+		width: 100%;
+	}
 }

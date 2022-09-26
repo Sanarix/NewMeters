@@ -10,11 +10,11 @@ class Test {
 		this.contribution = null;
 	}
 
-	start() {
-		textField.innerHTML = `
-		
-		`
-	}
+	showTest(){}
+
+	nextSlide(){}
+
+	previousSlide(){}
 }
 
 startButton.addEventListener('click', () => {

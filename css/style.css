@@ -84,6 +84,8 @@
 }
 
 .test {
+	display: flex;
+	justify-content: center;
 	background-color: #323338; 
 	width: 100%;
 	height: 100%;
@@ -105,14 +107,43 @@
 
 .test-aside {
 	background: url('../img/test-aside-background.png') no-repeat;
-	background-size: overlay;
+	background-size: cover;
 	padding-top: 10px;
+	width: 267px;
+	height: 552px;
+}
+
+.test-aside_header {
+	font-family: 'Nunito Sans', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 23px;
+	text-align: center;
 }
 
 .test-body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 995px;
+	max-height: 600px;
 	background-color: #232429;
 	color: white;
-	padding-top: 10px;
+	font-family: 'Nunito Sans', sans-serif;
+	padding: 20px 0;
+	margin: 0 auto;
+}
+
+.test-container {
+	height: 100%;
+}
+
+.test-container > .container{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .scale {
@@ -134,7 +165,13 @@
 	border-radius: 5px;
 }
 
+.answers-container {
+	width: 100%;
+	padding: 0 !important;
+}
+
 .answers {
+	width: 1005px;
 	height: 100%;
 }
 
@@ -161,6 +198,7 @@
 
 .answer label {
 	margin-left: 15px;
+	cursor: pointer;
 }
 
 .answer-text {
@@ -169,9 +207,83 @@
 	margin-left: 10px;
 }
 
+/*Стили для тестовой модалки*/
+
+.info-frame {
+	text-align: center;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	color: orange;
+	border: 2px solid orange;
+	height: 50px;
+	margin-bottom: 10px;
+	background-color: rgba(1,1,1,0.35);
+}
+
+.info-frame h6 {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.introduce-frame {
+	position: relative;
+	background-color: rgba(1,1,1,0.35);
+	margin-bottom: 20px;
+}
+
+.introduce-frame::after {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	content: '';
+	display: block;
+	border: 10px solid transparent;
+	border-left: 10px solid rgba(1,1,1,0.35);
+	border-top: 10px solid rgba(1,1,1,0.35);
+}
+
+.introduce-text {
+	padding: 5px;
+	text-align: center;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 14px;
+	text-align: center;
+}
+
+.employee-frame {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding-bottom: 10px;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 15px;
+}
+
+.img-employee {
+	width: 110px;
+	height: 110px;
+}
+
+.button-block {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
 /*Стили для кусков текста, кнопок, состояний*/
 
 .overlay {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -186,9 +298,6 @@
 	flex-direction: row;
 	align-items: flex-start;
 	padding: 20px 40px;
-	gap: 10px;
-	width: 179px;
-	height: 60px;
 	background: #F48C0C;
 	color: white;
 	font-weight: 600;
@@ -197,12 +306,26 @@
 	user-select: none;
 }
 
+.test-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 143px !important;
+}
+
 .start-button {
 	margin-bottom: 133px;
 }
 
 .bold-text {
 	font-weight: bold;
+}
+
+.hint {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 14px;
 }
 
 .hide {

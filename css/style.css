@@ -81,6 +81,7 @@
 	bottom: 0;
 	width: 90%;
 	margin-bottom: 11px;
+	z-index: 1;
 }
 
 .test {
@@ -95,7 +96,7 @@
 
 .test-header {
 	text-align: center;
-	margin: 30px 0;
+	margin: 30px;
 }
 
 .test-col{
@@ -147,6 +148,10 @@
 }
 
 .scale {
+	margin-bottom: 30px;
+}
+
+.scale-line {
 	padding: 0 !important;
 	margin: 0;
 	width: 100%;
@@ -168,6 +173,9 @@
 .answers-container {
 	width: 100%;
 	padding: 0 !important;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .answers {
@@ -304,6 +312,7 @@
 	border: none;
 	border-radius: 2px;
 	user-select: none;
+	cursor: pointer;
 }
 
 .test-button {

@@ -1,6 +1,6 @@
 export default function template( {header, contentAside, answers} ) {
 	return `
-	<div class="container">
+	<div class="test-container">
 	<div class="row">
 		<header class="container-fluid header">
 			<div class="row test-row align-items-center">
@@ -36,12 +36,14 @@ export default function template( {header, contentAside, answers} ) {
 								<div class="row">
 									<div class="introduce-frame">
 										${contentAside || ''}
-							</div>
-							<div class="row employee-frame">
-									<img class="img img-employee" src="./img/Employee.svg" alt="employee">
-									<h5><span class="bold-text">Евгения Казакова</span></h5>
-									Эксперт по недвижимости Санкт-Петербурга
-							</div>
+								</div>
+								<div class="row">
+									<div class="row employee-frame">
+										<img class="img img-employee" src="./img/Employee.svg" alt="employee">
+										<h5><span class="bold-text">Евгения Казакова</span></h5>
+										Эксперт по недвижимости Санкт-Петербурга
+									</div>
+								</div>
 							</div>
 						</aside>
 					</div>

@@ -2,7 +2,8 @@ import template from './template.js';
 import Slides from './Slides.js';
 
 export default class Test {
-	constructor() {
+	constructor(main) {
+		this.main = main;
 		this.slide = 1;
 		this.maxSlide = 6;
 		this.type = null;
@@ -15,8 +16,10 @@ export default class Test {
 		this.buttonBack;
 		this.buttonBackHide = true;
 		this.buttonNext;
+		this.buttonExit;
 		this.buttonsContainerStyle = 'flex-end';
 		this.container = document.querySelector('.test');
+		this.savedAnswers = {type: null, apartment: null, payment: null}
 	}
 
 	renderTest() {
@@ -30,6 +33,7 @@ export default class Test {
 		}
 
 		this.buttonNext = this.container.querySelector('.test-button_next');
+		this.buttonExit = this.container.querySelector('.logo');
 
 		this.scaleFilling = document.querySelector('.scale-filling');
 		this.scaleFilling.style.width = this.scaleFillingPercents + '%';
@@ -37,6 +41,9 @@ export default class Test {
 
 		this._nextSlide();
 		this._previousSlide();
+		this._exit();
+		this._checkAnswers();
+		this._chooseListener();
 	}
 
 	_nextSlide() {
@@ -44,13 +51,12 @@ export default class Test {
 			if (this.slide <= this.maxSlide) {
 				this.slide++;
 				this.buttonBackHide = false;
-				this.buttonsContainerStyle = ('space-between');
+				this.buttonsContainerStyle = 'space-between';
 			}
 
 			this.scaleFillingPercents += 25;
 			this.Slides.countUp();
 			this.renderTest();
-			console.log(this.slide);
 		})
 	}
 
@@ -67,8 +73,56 @@ export default class Test {
 			this.scaleFillingPercents -= 25;
 			this.Slides.countDown();
 			this.renderTest();
-			console.log(this.slide);
 		})
+	}
+	//Слушает клики по ответам, отмечая их и стирая старые отметки
+	//Сохраняет новый ответ
+	_chooseListener() {
+		this.container.querySelector('.answers-container').addEventListener('click', (e) => {
+			if (e.target.nodeName === 'INPUT') {
+				const labels = this.container.querySelectorAll('label');
+				for(let label of labels) {
+					label.style.color = 'inherit';
+				}
+				let key = e.target.classList[0];
+				let value = e.target.id;
+				let label = e.target.parentElement.querySelector('label');
+				label.style.color = 'orange';
+				this._saveAnswer(key, value);
+			}
+		})
+	}
+
+	_exit() {
+		const overlay = document.querySelector('.overlay');
+		this.buttonExit.addEventListener('click', () => {
+			overlay.classList.add('hide');
+			this.main.classList.remove('d-none')
+		})
+	}
+	//Ставит галочку в тесте для сохранённого ответа при его наличии
+	_checkAnswers() {
+		let answers = this.container.querySelectorAll('input');
+		for (let answer of answers) {
+			for (let key in this.savedAnswers) {
+				if (
+					answer.classList[0] === key 
+					&& answer.id === this.savedAnswers[key]
+					) {
+						let container = answer.parentElement;
+						let label = container.querySelector('label');
+						label.style.color = 'orange';
+				}
+			}
+		}
+	}
+
+	get Answers() {
+		return this.savedAnswers;
+	}
+
+	_saveAnswer(key, value) {
+		this.savedAnswers[key] = value;
 	}
 }
 

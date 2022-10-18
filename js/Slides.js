@@ -6,13 +6,10 @@ export default class Slides {
 	renderSlide() {
 		switch(this.slideNum)	{
 			case 1: return this.slide1();
-			break;
 			case 2: return this.slide2();
-			break;
 			case 3: return this.slide3();
-			break;
 			case 4: return 'Вывожу слайд 4';
-			break;
+			default: break;
 		}
 	}
 
@@ -42,7 +39,7 @@ export default class Slides {
 		`;
 		const answers = `
 		<div class="answer">
-		<input type="radio" name="answer" id="answer-1" class="hide">
+		<input type="radio" name="answer" id="answer-1" class="type hide">
 		<label for="answer-1">
 			<i class="fa-regular fa-square-check"></i>
 		</label>
@@ -51,7 +48,7 @@ export default class Slides {
 		</p>
 	</div>
 	<div class="answer">
-		<input type="radio" name="answer" id="answer-2" class="hide">
+		<input type="radio" name="answer" id="answer-2" class="type hide">
 		<label for="answer-2">
 			<i class="fa-regular fa-square-check"></i>
 		</label>
@@ -60,7 +57,7 @@ export default class Slides {
 		</p>
 	</div>
 	<div class="answer">
-		<input type="radio" name="answer" id="answer-3" class="hide">
+		<input type="radio" name="answer" id="answer-3" class="type hide">
 	<label for="answer-3">
 		<i class="fa-regular fa-square-check"></i>
 	</label>
@@ -83,59 +80,69 @@ export default class Slides {
 			</div>
 		`;
 		const answers = `
-			<div class="answer">
-			<input type="radio" name="answer" id="answer-1" class="hide">
-			<label for="answer-1">
-				<i class="fa-regular fa-square-check"></i>
-			</label>
-			<p class="answer-text">
-				Не определились
-			</p>
-			</div>
-			<div class="answer">
-			<input type="radio" name="answer" id="answer-2" class="hide">
-			<label for="answer-2">
-				<i class="fa-regular fa-square-check"></i>
-			</label>
-			<p class="answer-text">
-				Студия
-			</p>
-			</div>
-			<div class="answer">
-			<input type="radio" name="answer" id="answer-3" class="hide">
-			<label for="answer-3">
-				<i class="fa-regular fa-square-check"></i>
-			</label>
-			<p class="answer-text">
-				Однокомнатная
-			</p>
-			</div>
-			<div class="answer">
-			<input type="radio" name="answer" id="answer-4" class="hide">
-			<label for="answer-4">
-				<i class="fa-regular fa-square-check"></i>
-			</label>
-			<p class="answer-text">
-				Двухкомнатная
-			</p>
-			</div>
-			<div class="answer">
-			<input type="radio" name="answer" id="answer-5" class="hide">
-			<label for="answer-5">
-				<i class="fa-regular fa-square-check"></i>
-			</label>
-			<p class="answer-text">
-				Трёхкомнатная
-			</p>
-			</div>
-			<div class="answer">
-			<input type="radio" name="answer" id="answer-6" class="hide">
-			<label for="answer-6">
-				<i class="fa-regular fa-square-check"></i>
-			</label>
-			<p class="answer-text">
-				Четырёхкомнатная и больше
-			</p>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="answer">
+						<input type="radio" name="answer" id="answer-1" class="apartment payment hide">
+						<label for="answer-1">
+							<i class="fa-regular fa-square-check"></i>
+						</label>
+						<p class="answer-text">
+							Не определились
+						</p>
+						</div>
+						<div class="answer">
+						<input type="radio" name="answer" id="answer-2" class="apartment payment hide">
+						<label for="answer-2">
+							<i class="fa-regular fa-square-check"></i>
+						</label>
+						<p class="answer-text">
+							Студия
+						</p>
+						</div>
+						<div class="answer">
+						<input type="radio" name="answer" id="answer-3" class="apartment payment hide">
+						<label for="answer-3">
+							<i class="fa-regular fa-square-check"></i>
+						</label>
+						<p class="answer-text">
+							Однокомнатная
+						</p>
+						</div>
+					</div>
+					<!--col-->
+					<div class="col">
+						<div class="answer">
+							<input type="radio" name="answer" id="answer-4" class="apartment payment hide">
+							<label for="answer-4">
+								<i class="fa-regular fa-square-check"></i>
+							</label>
+							<p class="answer-text">
+								Двухкомнатная
+							</p>
+						</div>
+						<div class="answer">
+							<input type="radio" name="answer" id="answer-5" class="apartment payment hide">
+							<label for="answer-5">
+								<i class="fa-regular fa-square-check"></i>
+							</label>
+							<p class="answer-text">
+								Трёхкомнатная
+							</p>
+						</div>
+						<div class="answer">
+							<input type="radio" name="answer" id="answer-6" class="apartment payment hide">
+							<label for="answer-6">
+								<i class="fa-regular fa-square-check"></i>
+							</label>
+							<p class="answer-text">
+								Четырёхкомнатная и больше
+							</p>
+						</div>
+					</div>
+					<!--col-->
+				</div>
 			</div>
 		`;
 		return {header, contentAside, answers}; 
@@ -152,7 +159,7 @@ export default class Slides {
 		`;
 		const answers = `
 		<div class="answer">
-			<input type="radio" name="answer" id="answer-1" class="hide">
+			<input type="radio" name="answer" id="answer-1" class="payment hide">
 			<label for="answer-2">
 				<i class="fa-regular fa-square-check"></i>
 			</label>

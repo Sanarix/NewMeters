@@ -5,7 +5,7 @@ export default class Test {
 	constructor(main) {
 		this.main = main;
 		this.slide = 1;
-		this.maxSlide = 6;
+		this.maxSlide = 3;
 		this.type = null;
 		this.apartment = null;
 		this.contribution = null;
@@ -25,6 +25,7 @@ export default class Test {
 	renderTest() {
 		this.container.innerHTML = this.template(this.Slides.renderSlide());
 
+		//Скрытие или показание кнопки "Назад" в тесте
 		this.buttonBack = this.container.querySelector('.test-button_back');
 		if(this.buttonBackHide) {
 			this.buttonBack.classList.add('hide');
@@ -35,15 +36,17 @@ export default class Test {
 		this.buttonNext = this.container.querySelector('.test-button_next');
 		this.buttonExit = this.container.querySelector('.logo');
 
+		//Заполнение шкалы прогресса
 		this.scaleFilling = document.querySelector('.scale-filling');
 		this.scaleFilling.style.width = this.scaleFillingPercents + '%';
 		this.buttonBack.parentElement.style.justifyContent = `${this.buttonsContainerStyle}`;
 
-		this._nextSlide();
+		this._nextSlide(this.container);
 		this._previousSlide();
 		this._exit();
 		this._checkAnswers();
 		this._chooseListener();
+		this._loadResults();
 	}
 
 	_nextSlide() {
@@ -114,6 +117,13 @@ export default class Test {
 						label.style.color = 'orange';
 				}
 			}
+		}
+	}
+
+	_loadResults() {
+		if(this.slide > this.maxSlide) {
+			this.container.querySelector('.test-body').style.display = 'none';
+			console.log('Загружаем результаты');
 		}
 	}
 

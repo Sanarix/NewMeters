@@ -8,7 +8,7 @@ export default class Slides {
 			case 1: return this.slide1();
 			case 2: return this.slide2();
 			case 3: return this.slide3();
-			case 4: return 'Вывожу слайд 4';
+			case 4: return this.slide4();
 			default: break;
 		}
 	}
@@ -23,7 +23,7 @@ export default class Slides {
 		}
 	}
 
-	slide1() {
+	slide1(slideNum = this.slideNum) {
 		const header = `
 			<h2 class="test-header">Какой тип жилья вас интересует?</h2>
 		`;
@@ -66,11 +66,10 @@ export default class Slides {
 	</p>
 </div>
 		`;
-
-		return {header, contentAside, answers};
+		return {header, contentAside, answers, slideNum};
 	}
 
-	slide2() {
+	slide2(slideNum = this.slideNum) {
 		const header = `
 			<h2 class="test-header">Какая квартира вам нужна?</h2>
 		`;
@@ -145,10 +144,10 @@ export default class Slides {
 				</div>
 			</div>
 		`;
-		return {header, contentAside, answers}; 
+		return {header, contentAside, answers, slideNum}; 
 	}
 
-	slide3() {
+	slide3(slideNum = this.slideNum) {
 		const header = `
 			<h2 class="test-header">Первоначальный взнос</h2>
 		`;
@@ -169,8 +168,10 @@ export default class Slides {
 		</div>
 		`; 
 
-		return {header, contentAside, answers};
+		return {header, contentAside, answers, slideNum};
 	}
 
-	slide4() {}
+	slide4() {
+		return ''
+	}
 }

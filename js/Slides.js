@@ -172,6 +172,12 @@ export default class Slides {
 	}
 
 	slide4() {
-		return ''
+		return `
+		<div class="container">
+			<p style="color:white;">
+			Загружаем результаты
+			</p>
+		</div>
+		`
 	}
 }

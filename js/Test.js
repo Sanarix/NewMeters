@@ -18,7 +18,7 @@ export default class Test {
 		this.buttonNext;
 		this.buttonExit;
 		this.buttonsContainerStyle = 'flex-end';
-		this.container = document.querySelector('.test');
+		this.container = document.querySelector('.test-body');
 		this.savedAnswers = {type: null, apartment: null, payment: null}
 	}
 
@@ -34,7 +34,7 @@ export default class Test {
 		}
 
 		this.buttonNext = this.container.querySelector('.test-button_next');
-		this.buttonExit = this.container.querySelector('.logo');
+		this.buttonExit = this.container.parentElement.querySelector('.logo');
 
 		//Заполнение шкалы прогресса
 		this.scaleFilling = document.querySelector('.scale-filling');
@@ -122,8 +122,9 @@ export default class Test {
 
 	_loadResults() {
 		if(this.slide > this.maxSlide) {
-			this.container.querySelector('.test-body').style.display = 'none';
-			console.log('Загружаем результаты');
+			this.container.innerHTML = '';
+			this.container.innerHTML = 
+			this.Slides.renderSlide();
 		}
 	}
 

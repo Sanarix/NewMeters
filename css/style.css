@@ -86,7 +86,6 @@
 }
 
 .test {
-	position: relative;
 	display: flex;
 	flex-direction: column;
 	background-color: #323338; 
@@ -131,6 +130,7 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 50%;
+	color: white;
 }
 
 .test-body {

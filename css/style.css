@@ -302,6 +302,25 @@
 	width: 50%;
 }
 
+.load-frame {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.load-frame > .scale-line > .scale-filling{
+	width: 0;
+	animation: load 7s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: both;
+}
+
+@keyframes load {
+	0% {width: 0;}
+	100% {width: 100%;}
+}
+
 /*Стили для кусков текста, кнопок, состояний*/
 
 .overlay {

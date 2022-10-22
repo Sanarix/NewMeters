@@ -125,6 +125,17 @@ export default class Test {
 			this.container.innerHTML = '';
 			this.container.innerHTML = 
 			this.Slides.renderSlide();
+			const scaleFilling = this.container.querySelector('.scale-filling');
+			const maxPercent = scaleFilling.parentElement.getBoundingClientRect().width;
+			let currentPercent = 0;
+			let interval = setInterval(()=>{
+				const percent = scaleFilling.getBoundingClientRect().width;
+				currentPercent = Math.round( (percent / maxPercent) * 100);
+				this.container.querySelector('.percent').innerText = currentPercent;
+				if (currentPercent >= 99) {
+					clearInterval(interval);
+				}
+			},100)
 		}
 	}
 

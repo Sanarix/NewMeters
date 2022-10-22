@@ -173,11 +173,17 @@ export default class Slides {
 
 	slide4() {
 		return `
-		<div class="container">
-			<p style="color:white;">
-			Загружаем результаты
-			</p>
+			<div class="load-frame">
+			<h2><span class="bold-text">Загружаем результаты...</span></h2>
+			<span>Это может занять несколько минут</span>
+			<div class="scale-line">
+				<div class="scale-filling"></div>
+			</div>
+			<div class="percents">
+				<span class="percent bold-text">0</span> из 100%
+			</div>
 		</div>
+		<!--load-frame-->
 		`
 	}
 }

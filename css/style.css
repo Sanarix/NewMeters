@@ -140,11 +140,14 @@
 	justify-content: center;
 	max-width: 995px;
 	max-height: 600px;
-	background-color: #232429;
 	color: white;
 	font-family: 'Nunito Sans', sans-serif;
 	padding: 20px 0;
 	margin: 0 auto;
+}
+
+.test-body > .container {
+	background-color: #232429;
 }
 
 .scale {

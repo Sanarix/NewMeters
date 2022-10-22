@@ -86,8 +86,9 @@
 }
 
 .test {
+	position: relative;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	background-color: #323338; 
 	width: 100%;
 	height: 100%;
@@ -125,6 +126,13 @@
 	text-align: center;
 }
 
+.test > .header > .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 50%;
+}
+
 .test-body {
 	display: flex;
 	align-items: center;
@@ -136,17 +144,6 @@
 	font-family: 'Nunito Sans', sans-serif;
 	padding: 20px 0;
 	margin: 0 auto;
-}
-
-.test-container {
-	height: 100%;
-}
-
-.test-container > .container{
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
 }
 
 .scale {
@@ -314,7 +311,6 @@
 	justify-content: center;
 	background-color: rgba(1,1,1,0.65);
 	z-index: 1000;
-	overflow: auto;
 }
 
 .button {

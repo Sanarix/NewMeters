@@ -1,25 +1,20 @@
 export default function template( {header, contentAside, answers, slideNum} ) {
 	return `
-	<div class="test-container">
-		<div class="row">
-			<header class="container-fluid header">
-				<div class="row test-row align-items-center">
-					<div class="col test-col">
-						<img src="./img/Vector.svg" alt="Новые метры" class="logo">
-					</div>
-					<!--col test-col-->
+	<div class="header container-fluid">
+		<div class="container">
+			<div>
+				<div>
+					<img src="./img/Vector.svg" alt="Новые метры" class="logo">
 				</div>
-				<!--row test-row-->
-					<div class="col test-col number-container">
-						<img class="img-fluid" src="./img/Phone.png" alt="Телефон">
-						<span class="bold-text">+7 812 603-76-40</span>
-					</div>
-					<!--col test-col-->
-			</header>
+			</div>
+			<div class="number-container">
+				<img class="img-fluid" src="./img/Phone.png" alt="Телефон">
+				<span class="bold-text">+7 812 603-76-40</span>
+			</div>
 		</div>
-		<!--row-->
+		<!--container-->
 	</div>
-	<!--test-container-->
+	<!--header-->
 	<div class="test-body">
 		<div class="container">
 			<div class="row flex-row-reverse">
